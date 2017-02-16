@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/Post">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <ListView
+                android:layout_width="match_parent"
+                android:layout_height="345dp"
+                android:id="@+id/lv01" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:id="@+id/bigimage"
+            android:visibility="gone"/>
+
+        <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="74dp"
+                android:id="@+id/horizontalSV"
+                android:layout_gravity="bottom"
+                android:layout_below="@+id/space4"
+                android:minHeight="50dp"
+                android:layout_weight="1.03">
+
+                <LinearLayout
+                    android:id="@+id/holder1"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@string/map"
+            android:background="@color/colorAccent"
+            android:id="@+id/mapbutton1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="14dp" >
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:isScrollContainer="false"
+        android:layout_above="@+id/feedback_send">
+
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_margin="2dp"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="10dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/card1">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Address:"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:id="@+id/e_addr"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true"  />
+
+                    <EditText
+                        android:id="@+id/feedback_addr"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:ems="10"
+                        android:hint="Address:"
+                        android:layout_toRightOf="@+id/e_addr"
+                        android:maxHeight="48dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Postal Code:"
+                        android:textSize="20sp"
+                        android:id="@+id/e_post"
+                        android:layout_below="@+id/feedback_addr"/>
+
+                    <EditText
+                        android:id="@+id/feedback_postal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:layout_toRightOf="@id/e_post"
+                        android:layout_below="@+id/feedback_addr"
+                        android:ems="10"
+                        android:hint="Your Postal Code"
+                        android:maxHeight="48dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Price/month:"
+                        android:textSize="20sp"
+                        android:id="@+id/e_price"
+                        android:layout_below="@+id/feedback_postal"/>
+
+                    <EditText
+                        android:id="@+id/feedback_price"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:layout_toRightOf="@id/e_price"
+                        android:layout_below="@+id/feedback_postal"
+                        android:ems="10"
+                        android:hint="Enter the Price"
+                        android:maxHeight="48dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Type:"
+                        android:textSize="20sp"
+                        android:id="@+id/e_type"
+                        android:layout_below="@+id/feedback_price"/>
+
+                    <Spinner
+                        android:id="@+id/feedback_type"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:layout_toRightOf="@id/e_type"
+                        android:layout_below="@id/feedback_price"
+                        android:minHeight="48dp"
+                        android:entries="@array/housing_type"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="From:"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:id="@+id/e_from"
+                        android:layout_below="@+id/e_type"/>
+
+                    <EditText
+                        android:id="@+id/feedback_from"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:ems="10"
+                        android:hint="Starting date:"
+                        android:layout_toRightOf="@+id/e_from"
+                        android:layout_below="@+id/e_type"
+                        android:inputType="date"
+                        android:maxHeight="48dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="To:"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:id="@+id/e_to"
+                        android:layout_below="@+id/e_from"/>
+
+                    <EditText
+                        android:id="@+id/feedback_to"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:ems="10"
+                        android:hint="Ending date:"
+                        android:layout_toRightOf="@+id/e_from"
+                        android:layout_below="@+id/e_from"
+                        android:inputType="date"
+                        android:maxHeight="48dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp"/>
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <Space
+                android:id="@+id/space1"
+                android:layout_below="@+id/card1"
+                android:layout_width="fill_parent"
+                android:layout_height="7dp"/>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_margin="2dp"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="10dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/card2"
+                android:layout_below="@+id/space1">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <CheckedTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="Furnished:"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:id="@+id/switch1"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:clickable="true"
+                        android:layout_alignParentTop="true" />
+
+                    <CheckedTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:textSize="20sp"
+                        android:text="Pet allowed:"
+                        android:gravity="center"
+                        android:id="@+id/switch2"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true" />
+
+                    <CheckedTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:textSize="20sp"
+                        android:text="Parking:"
+                        android:gravity="center"
+                        android:id="@+id/switch3"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_below="@id/switch1"/>
+
+                    <CheckedTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:textSize="20sp"
+                        android:text="Ensuite Washroom:"
+                        android:gravity="center"
+                        android:id="@+id/switch4"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_below="@id/switch1"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"/>
+
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <Space
+                android:id="@+id/space2"
+                android:layout_below="@+id/card2"
+                android:layout_width="fill_parent"
+                android:layout_height="7dp"/>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_margin="2dp"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="10dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/card3"
+                android:layout_below="@+id/space2">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Description:"
+                        android:textSize="20sp"
+                        android:id="@+id/e_description" />
+
+                    <EditText
+                        android:id="@+id/feedback_message"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/e_description"
+                        android:ems="10"
+                        android:gravity="top"
+                        android:hint="Message"
+                        android:inputType="textMultiLine"
+                        android:minHeight="150dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <Space
+                android:id="@+id/space3"
+                android:layout_below="@+id/card3"
+                android:layout_width="fill_parent"
+                android:layout_height="7dp"/>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_margin="2dp"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="10dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/card4"
+                android:layout_below="@+id/space3">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Contact Info:"
+                        android:textSize="20sp"
+                        android:id="@+id/e_contect" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Phone:"
+                        android:textSize="20sp"
+                        android:layout_below="@id/e_contect"
+                        android:id="@+id/e_phone" />
+
+                    <EditText
+                        android:id="@+id/feedback_phone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:ems="10"
+                        android:hint="Your contact phone number:"
+                        android:layout_toRightOf="@+id/e_phone"
+                        android:layout_below="@+id/e_contect"
+                        android:inputType="phone"
+                        android:maxHeight="48dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Email:"
+                        android:textSize="20sp"
+                        android:layout_below="@id/e_phone"
+                        android:id="@+id/e_email" />
+
+                    <EditText
+                        android:id="@+id/feedback_email"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48dp"
+                        android:ems="10"
+                        android:hint="Your contact email:"
+                        android:layout_toRightOf="@+id/e_email"
+                        android:layout_below="@+id/e_phone"
+                        android:inputType="textWebEmailAddress"
+                        android:maxHeight="48dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp"/>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <Space
+                android:id="@+id/space4"
+                android:layout_below="@+id/card4"
+                android:layout_width="fill_parent"
+                android:layout_height="7dp"/>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/horizontalSV"
+                android:layout_gravity="bottom"
+                android:layout_below="@+id/space4"
+                android:minHeight="50dp">
+
+                <LinearLayout
+                    android:id="@+id/holder"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageV1"
+
+                        android:src="@drawable/imageplaceholder"/>
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <!--<ScrollView-->
+        <!--android:id="@+id/scroll1"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:fillViewport="true"-->
+        <!--android:isScrollContainer="false"-->
+        <!--android:layout_below="@+id/scroll">-->
+
+            <Button
+                android:id="@+id/feedback_send"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:background="@color/colorAccent"
+                android:maxHeight="48dp"
+                android:text="Save Changes"
+                android:windowSoftInputMode="adjustNothing"
+                android:textColor="#FFFFFF"
+                android:layout_alignParentBottom="true"
+                android:layout_alignEnd="@+id/scroll" />
+            <Button
+                android:id="@+id/feedback_delete"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:background="@color/colorAccent"
+                android:maxHeight="48dp"
+                android:text="Delete"
+                android:windowSoftInputMode="adjustNothing"
+                android:textColor="#FFFFFF"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/feedback_send" />
+    <!--</ScrollView>-->
+
+    <!--android:windowSoftInputMode="adjustNothing"-->
+    <!--android:isScrollContainer="false"-->
+
+</RelativeLayout>
